@@ -15,6 +15,12 @@ describe('<Logo />', () => {
     })
   })
 
+  it('should render the logo with id passed', () => {
+    const { container } = renderWhithTheme(<Logo id="myId" />)
+
+    expect(container.querySelector('#a_myId')).toBeInTheDocument()
+  })
+
   it('should render a black label color is passed', () => {
     renderWhithTheme(<Logo color="black" />)
 
