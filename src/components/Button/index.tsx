@@ -1,4 +1,8 @@
-import React, { AnchorHTMLAttributes, ButtonHTMLAttributes } from 'react'
+import React, {
+  AnchorHTMLAttributes,
+  ButtonHTMLAttributes,
+  forwardRef
+} from 'react'
 import * as S from './styles'
 
 type ButtonTypes =
@@ -13,19 +17,23 @@ export type ButtonProps = {
   minimal?: boolean
 } & ButtonTypes
 
-const Button = ({
-  children,
-  size = 'medium',
-  minimal = false,
-  fullWidth = false,
-  icon,
-  ...props
-}: ButtonProps) => (
+const Button: React.ForwardRefRenderFunction<S.wrapperProps, ButtonProps> = (
+  {
+    children,
+    size = 'medium',
+    minimal = false,
+    fullWidth = false,
+    icon,
+    ...props
+  },
+  ref
+) => (
   <S.Wrapper
     size={size}
     fullWidth={fullWidth}
     hasIcon={!!icon}
     {...props}
+    ref={ref}
     minimal={minimal}
   >
     {!!icon && icon}
@@ -33,4 +41,4 @@ const Button = ({
   </S.Wrapper>
 )
 
-export default Button
+export default forwardRef(Button)
