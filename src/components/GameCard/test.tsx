@@ -1,5 +1,4 @@
 import { fireEvent, screen } from '@testing-library/react'
-import theme from 'styles/theme'
 import { renderWhithTheme } from 'utils/tests/helpers'
 import GameCard from '.'
 

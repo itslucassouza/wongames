@@ -3,7 +3,6 @@ import { GameCardProps } from 'components/GameCard'
 import * as S from './styles'
 
 import { Container } from 'components/Container'
-import Footer from 'components/Footer'
 
 import BannerSlider from 'components/BannerSlider'
 import Showcase from 'components/Showcase'
