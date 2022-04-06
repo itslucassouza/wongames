@@ -1,6 +1,5 @@
 import styled, { css } from 'styled-components'
 import media from 'styled-media-query'
-
 export const Wrapper = styled.div`
   ${({ theme }) => css`
     .slick-prev,
@@ -40,8 +39,7 @@ export const Wrapper = styled.div`
 type ModalProps = {
   isOpen: boolean
 }
-
-const ModalModifiers = {
+const modalModifiers = {
   open: () => css`
     opacity: 1;
   `,
@@ -63,11 +61,10 @@ export const Modal = styled.div<ModalProps>`
     align-items: center;
     z-index: ${theme.layers.modal};
     transition: opacity ${theme.transition.default};
-    ${isOpen && ModalModifiers.open()}
-    ${!isOpen && ModalModifiers.close()}
+    ${isOpen && modalModifiers.open()}
+    ${!isOpen && modalModifiers.close()}
   `}
 `
-
 export const Close = styled.div`
   ${({ theme }) => css`
     color: ${theme.colors.white};
@@ -80,8 +77,8 @@ export const Close = styled.div`
     text-align: right;
   `}
 `
+
 export const Content = styled.div`
-  width: 100%;
-  max-width: 120rem;
+  max-width: min(120rem, 100%);
   max-height: 80rem;
 `

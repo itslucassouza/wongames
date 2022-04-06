@@ -33,16 +33,16 @@ describe('<Gallery />', () => {
     expect(modal).toHaveStyle({ opacity: 1 })
   })
 
-  // it('should open modal with selected image', async () => {
-  //   renderWhithTheme(<Gallery items={mockItems.slice(0, 2)} />)
+  it('should open modal with selected image', async () => {
+    renderWhithTheme(<Gallery items={mockItems.slice(0, 2)} />)
 
-  //   fireEvent.click(
-  //     screen.getByRole('button', { name: /thumb - gallery Image 2/i })
-  //   )
+    fireEvent.click(
+      screen.getByRole('button', { name: /thumb - gallery Image 2/i })
+    )
 
-  //   const img = await screen.findByRole('img', { name: /Gallery image 2/i })
-  //   expect(img.parentElement?.parentElement).toHaveClass('slick-active')
-  // })
+    const img = await screen.findByRole('img', { name: /Gallery image 2/i })
+    expect(img.parentElement?.parentElement).toHaveClass('slick-active')
+  })
 
   it('should handle close modal when overlay or button clicked', () => {
     renderWhithTheme(<Gallery items={mockItems.slice(0, 2)} />)

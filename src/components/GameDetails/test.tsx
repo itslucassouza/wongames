@@ -5,6 +5,7 @@ import GameDetails, { GameDetailsProps } from '.'
 
 const props: GameDetailsProps = {
   developer: 'Different Tales',
+  publisher: 'Walktrough',
   platforms: ['windows', 'mac', 'linux'],
   releaseDate: '2020-11-21T23:00:00',
   rating: 'BR0',
@@ -50,10 +51,16 @@ describe('<GameDetails />', () => {
     expect(screen.getByText(/free/i)).toBeInTheDocument()
   })
 
-  it('should render 18+ rating when br18', () => {
-    renderWhithTheme(<GameDetails {...props} rating="BR18" />)
+  it('should render the developer', () => {
+    renderWhithTheme(<GameDetails {...props} />)
 
-    expect(screen.getByText(/18\+/i)).toBeInTheDocument()
+    expect(screen.getByText(/Different Tales/i)).toBeInTheDocument()
+  })
+
+  it('should render the publisher', () => {
+    renderWhithTheme(<GameDetails {...props} />)
+
+    expect(screen.getByText(/walktrough/i)).toBeInTheDocument()
   })
 
   it('should render a list of genres', () => {
