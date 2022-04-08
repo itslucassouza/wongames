@@ -1,5 +1,7 @@
 import Game, { GameTemplateProps } from 'templates/Game'
 
+import gamesMock from 'components/GameCardSlider/mock'
+import highlighMock from 'components/Highlight/mock'
 import galleryMock from 'components/Gallery/mock'
 
 export default function Index(props: GameTemplateProps) {
@@ -48,7 +50,10 @@ export async function getStaticProps() {
         publisher: 'CD PROJEKT RED',
         rating: 'BR18',
         genres: ['Action', 'Role-playing']
-      }
+      },
+      upcommingGames: gamesMock,
+      upcommingHighLight: highlighMock,
+      recommendedGames: gamesMock
     }
   }
 }
