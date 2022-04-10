@@ -26,6 +26,18 @@ describe('<Button />', () => {
     })
   })
 
+  it('should render a disabled Button', () => {
+    renderWhithTheme(<Button disabled>Buy now</Button>)
+
+    expect(screen.getByRole('button', { name: /buy now/i })).toHaveStyleRule(
+      'cursor',
+      'not-allowed',
+      {
+        modifier: ':disabled'
+      }
+    )
+  })
+
   it('should render the large size', () => {
     renderWhithTheme(<Button size="large">Buy Now</Button>)
 
