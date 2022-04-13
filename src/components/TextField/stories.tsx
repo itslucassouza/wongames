@@ -9,6 +9,7 @@ export default {
     label: 'E-mail',
     labelFor: 'Email',
     id: 'Email',
+    name: 'email',
     icon: <Email />,
     initialValue: '',
     placeholder: 'john.cage@gmail.com'

@@ -8,7 +8,7 @@ import { renderWhithTheme } from 'utils/tests/helpers'
 
 describe('<TextField />', () => {
   it('Renders with Label', () => {
-    renderWhithTheme(<TextField label="Label" labelFor="Field" id="Field" />)
+    renderWhithTheme(<TextField label="Label" name="Label" />)
 
     expect(screen.getByLabelText('Label')).toBeInTheDocument()
   })
@@ -34,12 +34,7 @@ describe('<TextField />', () => {
   it('Changes its value when typing', async () => {
     const onInput = jest.fn()
     renderWhithTheme(
-      <TextField
-        onInput={onInput}
-        label="TextField"
-        labelFor="TextField"
-        id="TextField"
-      />
+      <TextField onInput={onInput} label="TextField" name="TextField" />
     )
 
     const input = screen.getByRole('textbox')
@@ -54,9 +49,7 @@ describe('<TextField />', () => {
   })
 
   it('Is accessible by tab', () => {
-    renderWhithTheme(
-      <TextField label="TextField" labelFor="TextField" id="TextField" />
-    )
+    renderWhithTheme(<TextField label="TextField" name="TextField" />)
 
     const input = screen.getByLabelText('TextField')
     expect(document.body).toHaveFocus()
@@ -67,7 +60,11 @@ describe('<TextField />', () => {
 
   it('Renders with Icon on the right side', () => {
     renderWhithTheme(
-      <TextField icon={<Email data-testid="icon" />} iconPosition="right" />
+      <TextField
+        icon={<Email data-testid="icon" />}
+        iconPosition="right"
+        name="TextField"
+      />
     )
 
     expect(screen.getByTestId('icon').parentElement).toHaveStyle({ order: 1 })
@@ -76,13 +73,7 @@ describe('<TextField />', () => {
   it('Does not changes its value when disabled', async () => {
     const onInput = jest.fn()
     renderWhithTheme(
-      <TextField
-        onInput={onInput}
-        label="TextField"
-        labelFor="TextField"
-        id="TextField"
-        disabled
-      />
+      <TextField onInput={onInput} label="TextField" id="TextField" disabled />
     )
 
     const input = screen.getByRole('textbox')
@@ -98,14 +89,7 @@ describe('<TextField />', () => {
   })
 
   it('Is not accessible by tab when disabled', () => {
-    renderWhithTheme(
-      <TextField
-        label="TextField"
-        labelFor="TextField"
-        id="TextField"
-        disabled
-      />
-    )
+    renderWhithTheme(<TextField label="TextField" disabled name="TextField" />)
 
     const input = screen.getByLabelText('TextField')
     expect(document.body).toHaveFocus()
@@ -119,7 +103,6 @@ describe('<TextField />', () => {
       <TextField
         icon={<Email data-testid="icon" />}
         label="TextField"
-        labelFor="TextField"
         error="Error message"
       />
     )
