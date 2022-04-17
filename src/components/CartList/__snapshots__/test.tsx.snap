@@ -79,6 +79,10 @@ exports[`<CartList /> should render the cartlist 1`] = `
   font-weight: 600;
   font-size: 1.4rem;
   padding: 2rem;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -124,7 +128,7 @@ exports[`<CartList /> should render the cartlist 1`] = `
   }
 }
 
-<main
+<div
   class="c0"
 >
   <main
@@ -190,12 +194,14 @@ exports[`<CartList /> should render the cartlist 1`] = `
   <div
     class="c7"
   >
-    Total 
+    <span>
+      Total:
+    </span>
     <span
       class="c8"
     >
       R$ 330,00
     </span>
   </div>
-</main>
+</div>
 `
