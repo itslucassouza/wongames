@@ -1,5 +1,5 @@
+import { AddShoppingCart } from '@styled-icons/material-outlined'
 import { screen } from '@testing-library/react'
-import { AddShoppingCart } from 'styled-icons/material-outlined'
 import { renderWhithTheme } from 'utils/tests/helpers'
 
 import Button from '.'

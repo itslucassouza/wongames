@@ -1,9 +1,9 @@
 import * as S from './styles'
-import { Add, ShoppingCart } from 'styled-icons/material-outlined'
 import Heading from 'components/Heading'
 import Radio from 'components/Radio'
 import Button from 'components/Button'
 import { useState } from 'react'
+import { Add, ShoppingCart } from '@styled-icons/material-outlined'
 
 export type PaymentOptionsProps = {
   cards?: PaymentCard[]
